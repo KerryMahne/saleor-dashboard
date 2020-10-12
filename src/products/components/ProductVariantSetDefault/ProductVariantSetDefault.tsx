@@ -3,10 +3,12 @@ import React from "react";
 import { useIntl } from "react-intl";
 
 interface ProductVariantSetDefaultProps {
+  disabled: boolean;
   onSetDefaultVariant: () => void;
 }
 
 const ProductVariantSetDefault: React.FC<ProductVariantSetDefaultProps> = ({
+  disabled,
   onSetDefaultVariant
 }) => {
   const intl = useIntl();
@@ -15,6 +17,7 @@ const ProductVariantSetDefault: React.FC<ProductVariantSetDefaultProps> = ({
     <CardMenu
       menuItems={[
         {
+          disabled,
           label: intl.formatMessage({
             defaultMessage: "Set as default",
             description: "set variant as default, button"

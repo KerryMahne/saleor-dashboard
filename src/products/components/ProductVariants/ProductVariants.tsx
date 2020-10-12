@@ -403,6 +403,7 @@ export const ProductVariants: React.FC<ProductVariantsProps> = props => {
                     onClick={e => e.stopPropagation()}
                   >
                     <ProductVariantSetDefault
+                      disabled={variant?.id === product?.defaultVariant.id}
                       onSetDefaultVariant={() => onSetDefaultVariant(variant)}
                     />
                   </TableCell>
